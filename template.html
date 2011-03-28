@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Facebook Album Share - {{ title }}</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.4.css" media="screen" />
+	<style type="text/css">
+	#image_container {
+		width:180px;
+		height:120px;
+		float: left;
+		margin: 10px;
+		text-align: center;
+	}
+	#image_container img {
+		max-height:100%;
+		max-width:100%;
+	}
+	</style>
+</head>
+<body id="html">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script src="js/jquery.lazyload.mini.js" type="text/javascript"></script>
+	<script src="js/jquery.lightbox.min.js" type="text/javascript" ></script>
+
+	<script>
+	$(function() {   
+		$('#gallery a').lightBox();
+		$("img").lazyload({
+			placeholder : "images/grey.gif",
+			effect      : "fadeIn"
+		});
+	});
+	</script>
+   <div id="gallery">
+	{% for image in images %}
+		<div id="image_container">
+			<a rel="lightbox[album]" href="{{ image.img }}" ><img src="{{ image.thumb }}" alt=""/></a>
+		</div>
+	{% endfor %}
+	</div>
+</body>
