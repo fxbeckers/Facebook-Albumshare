@@ -1,16 +1,30 @@
-var i,jssrc, jss=['http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js','http://fbalbumshare.appspot.com/share.js'];for(i=0;i!=jss.length;i++){jssrc=document.createElement('script');jssrc.src=jss[i];document.body.appendChild(jssrc);}void(0);
+#Facebook Albumshare
 
-http://www.bram.us/projects/js_bramus/lazierload/
+Proof of concept for a straightforward way of bypassing Facebook's album privacy measures
 
+##User Guide
 
-- url: /
-  static_files: static/index.html
-  upload: static/(.*)
+(see [http://fbalbumshare.appspot.com](http://fbalbumshare.appspot.com))
 
+1.	Add javascript bookmark to bookmarks bar
++	Browse to a facebook album
++	Click on the bookmark
 
-	//Parse thumbnail URL
-	//element.firstChild.firstChild.style.cssText.match(new RegExp('background-image:\turl\(\t(.+)\t\);\t'))
+You will now be taken to an page containing all the images of the album with a unique but publicly browsable url
 
+##Requirements
 
-	- url: /
-	  script: main.py
+###Server
+
++	Google App Engine
++	Python 2.5
+
+###User 
+
++	Webkit/Gecko based browser (for javascript bookmark)
+
+##Dependencies
+
++	http://code.google.com/p/simplejson/
++	http://code.activestate.com/recipes/496882-javascript-code-compression/
++	http://www.bram.us/projects/js_bramus/lazierload/
