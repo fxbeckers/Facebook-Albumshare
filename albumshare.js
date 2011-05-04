@@ -8,7 +8,7 @@ function getSrc(variable) {
 		}
 	}
 };
-if (!document.URL.match(new RegExp('https?://www.facebook.com/media/set/fbx/?.+'))) {
+if (!document.URL.match(new RegExp('https?://www.facebook.com/media/set/?.+'))) {
 	alert('Please use this script on a facebook album');
 } else {
 	var title = escape(document.title);
