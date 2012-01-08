@@ -19,7 +19,7 @@ class IndexHandler(webapp.RequestHandler):
 	def get(self):
 		jspath = os.path.join(os.path.dirname(__file__),'albumshare.js')
 		scriptString = open(jspath, 'r').read()
-		c = JSCompressor(compressionLevel=2, measureCompression=True)
+		c = JSCompressor(compressionLevel=2, measureCompression=False)
 		scriptString = c.compress(scriptString)
 		template_values = { 'js': scriptString, }
 		path = os.path.join(os.path.dirname(__file__),'index.html')
